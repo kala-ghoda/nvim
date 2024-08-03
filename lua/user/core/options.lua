@@ -3,6 +3,7 @@ vim.cmd("let g:netrw_liststyle = 3")    -- netrw is the built in nvim file explo
 local opt=vim.opt
 
 opt.clipboard = "unnamedplus"   -- access to clipboard
+opt.modifiable = true
 -- opt.cmdheight = 2               -- command line height
 opt.completeopt = { "menuone", "noselect" }     -- completion commands
 opt.fileencoding = "utf-8"
