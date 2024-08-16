@@ -1,14 +1,29 @@
 return {
     "williamboman/mason.nvim",
+    dependencies = {
+        "williamboman/mason-lspconfig.nvim",
+    },
     config = function()
-        require("mason").setup({
+        local mason = require("mason")
+        local mason_lspconfig = require("mason-lspconfig")
+
+        mason.setup({
             ui = {
-            icons = {
-                package_installed = "✓",
-                package_pending = "➜",
-                package_uninstalled = "✗"
+                icons = {
+                    package_installed = "✓",
+                    package_pending = "➜",
+                    package_uninstalled = "✗"
+                }
             }
-        }
-    })
-    end,
+        })
+
+        mason_lspconfig.setup({
+            ensure_installed = {
+                "html",
+                "pyright",
+                "pylsp",
+                "bacon-ls",
+            }
+        })
+    end
 }

@@ -25,10 +25,9 @@ keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
 -- FZF keymaps
-local builtin = require("telescope.builtin")
-keymap.set("n", "<leader>ff", builtin.find_files, {})
-keymap.set("n", "<leader>gf", builtin.git_files, {})
-keymap.set("n", "<leader>pf", function() builtin.grep_string({ search = vim.fn.input("Grep > ") }) end, {})
+keymap.set("n", "<leader>ff", "<cmd>Telescope find_files", {})
+keymap.set("n", "<leader>gf",  "<cmd>Telescope git_files", {})
+keymap.set("n", "<leader>pf",  "<cmd>Telescope live_grep", {})
 
 -- NvimTree keymaps
 keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
