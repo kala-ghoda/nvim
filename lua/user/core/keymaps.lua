@@ -24,6 +24,10 @@ keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
+-- Buffer keymaps
+keymap.set("n", "<C-n>", "<cmd>bn<CR>", { desc = "Change to next buffer" })
+keymap.set("n", "<C-p>", "<cmd>bp<CR>", { desc = "Change to previous buffer" })
+
 -- FZF keymaps
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>", {})
 keymap.set("n", "<leader>gf",  "<cmd>Telescope git_files<CR>", {})
